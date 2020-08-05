@@ -1,0 +1,13 @@
+.info {
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  align-items: center;
+}
+
+.font {
+  font-size: smaller;
+  text-align: center;
+}
