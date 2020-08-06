@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 // import { CameraService } from './camera.component.service';
 // import { CameraService } from './camera.component.service';
-import { CameraService } from '../services/camera/camera.service'
+import { CameraService } from '../services/camera/camera.service';
 
 @Component({
   selector: 'app-camera',
@@ -39,10 +39,10 @@ export class CameraComponent implements OnInit {
     } else if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       navigator.mediaDevices.getUserMedia({ video: true });
     }
-    this.cameraService.loadModels()
-    .then((result: any) => {
+    this.cameraService.loadModels().then((result: any) => {
       setTimeout(
         () => this.cameraService.createDetection(this.videoElement, this.videoContainer),
+        // () => null,
         2000
       );
     });

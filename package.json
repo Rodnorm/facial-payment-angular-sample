@@ -1,4 +1,5 @@
 {
+  "homepage": "http://Rodnorm.github.io/facial-payment-angular-sample",
   "name": "facial-payment-angular-sample",
   "version": "0.0.0",
   "scripts": {
@@ -7,7 +8,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deplo-ghp": "ng deploy --baseHref=\"https://rodnorm.github.io/facial-payment-angular-sample/\" "
   },
   "private": true,
   "dependencies": {

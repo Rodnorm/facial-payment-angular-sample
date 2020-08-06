@@ -88,7 +88,6 @@ export class CameraService {
         } else if (expressions.angry > 0.99) {
           this.setAngryFaceCounter(this.getAngryFaceCounter() + 1);
         } else if (expressions.sad > 0.99) {
-          console.log('sad');
           this.setSadFaceCounter(this.getSadFaceCounter() + 1);
         }
       }

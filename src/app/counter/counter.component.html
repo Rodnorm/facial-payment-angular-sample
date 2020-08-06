@@ -1,18 +1,57 @@
 <section class="counters">
-  <mat-progress-bar
+  <!-- <mat-progress-bar
+    class="progress-bar"
     mode="determinate"
     value="{{ smileFaceCounter }}"
-  ></mat-progress-bar>
+  ></mat-progress-bar> -->
+  <div matTooltip="Happy">
+    <mat-progress-spinner
+      class="custom-badge progress-bar"
+      value="{{ smileFaceCounter }}"
+    >
+    </mat-progress-spinner>
+    <div class="spinner-label">
+      <mat-icon> sentiment_satisfied_alt </mat-icon>
+    </div>
+  </div>
   <mat-divider></mat-divider>
-  <mat-progress-bar
+  <div matTooltip="Sad">
+    <mat-progress-spinner
+      color="accent"
+      class="custom-badge progress-bar"
+      value="{{ sadFaceCounter }}"
+    >
+    </mat-progress-spinner>
+    <div class="spinner-label">
+      <mat-icon> sentiment_dissatisfied </mat-icon>
+    </div>
+  </div>
+
+  <!-- <mat-progress-bar
+    class="progress-bar"
     mode="determinate"
     value="{{ sadFaceCounter }}"
     color="accent"
-  ></mat-progress-bar>
+  ></mat-progress-bar> -->
   <mat-divider></mat-divider>
-  <mat-progress-bar
+
+  <div matTooltip="Angry">
+    <mat-progress-spinner
+      class="custom-badge progress-bar"
+      value="{{ angryFaceCounter }}"
+      color="warn"
+    >
+    </mat-progress-spinner>
+    <div class="spinner-label">
+      <mat-icon> sentiment_very_dissatisfied </mat-icon>
+    </div>
+  </div>
+  <!-- <mat-progress-bar
+    class="progress-bar"
     mode="determinate"
     value="{{ angryFaceCounter }}"
     color="warn"
-  ></mat-progress-bar>
+  ></mat-progress-bar> -->
 </section>
+
+<!-- matBadge="happy" matBadgeOverlap="true" -->

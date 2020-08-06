@@ -1,8 +1,13 @@
 <div class="container">
-  <app-camera></app-camera>
-  <app-counter
-  smileFaceCounter="{{ cameraService.getSmileFaceCounter() }}"
-  angryFaceCounter="{{ cameraService.getAngryFaceCounter() }}"
-  sadFaceCounter="{{ cameraService.getSadFaceCounter() }}"
-></app-counter>
+  <h1>Moodometer</h1>
+  <mat-grid-list [cols]="breakpoint" rowHeight="2:1">
+    <mat-grid-tile> <app-camera></app-camera></mat-grid-tile>
+    <mat-grid-tile>
+      <app-counter
+        smileFaceCounter="{{ cameraService.getSmileFaceCounter() }}"
+        angryFaceCounter="{{ cameraService.getAngryFaceCounter() }}"
+        sadFaceCounter="{{ cameraService.getSadFaceCounter() }}"
+      ></app-counter>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
