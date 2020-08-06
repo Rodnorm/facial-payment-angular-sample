@@ -22,6 +22,8 @@ export class CameraComponent implements OnInit {
     error: () => console.log('erro'),
   };
 
+  public dataError: boolean = false;
+
   getVideo = (): void => {
     if (navigator.getUserMedia) {
       navigator.getUserMedia =
@@ -39,13 +41,21 @@ export class CameraComponent implements OnInit {
     } else if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       navigator.mediaDevices.getUserMedia({ video: true });
     }
-    this.cameraService.loadModels().then((result: any) => {
-      setTimeout(
-        () => this.cameraService.createDetection(this.videoElement, this.videoContainer),
-        // () => null,
-        2000
-      );
-    });
+    this.cameraService
+      .loadModels()
+      .then(() => {
+        
+        setTimeout(
+          () =>
+            this.cameraService.createDetection(
+              this.videoElement,
+              this.videoContainer
+            ),
+          // () => null,
+          2000
+        );
+      })
+      .catch(() => (this.dataError = true));
   };
 
   ngOnInit(): void {

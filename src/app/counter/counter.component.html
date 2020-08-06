@@ -1,9 +1,5 @@
 <section class="counters">
-  <!-- <mat-progress-bar
-    class="progress-bar"
-    mode="determinate"
-    value="{{ smileFaceCounter }}"
-  ></mat-progress-bar> -->
+
   <div matTooltip="Happy">
     <mat-progress-spinner
       class="custom-badge progress-bar"
@@ -27,12 +23,7 @@
     </div>
   </div>
 
-  <!-- <mat-progress-bar
-    class="progress-bar"
-    mode="determinate"
-    value="{{ sadFaceCounter }}"
-    color="accent"
-  ></mat-progress-bar> -->
+
   <mat-divider></mat-divider>
 
   <div matTooltip="Angry">
@@ -46,12 +37,9 @@
       <mat-icon> sentiment_very_dissatisfied </mat-icon>
     </div>
   </div>
-  <!-- <mat-progress-bar
-    class="progress-bar"
-    mode="determinate"
-    value="{{ angryFaceCounter }}"
-    color="warn"
-  ></mat-progress-bar> -->
 </section>
+<div class="button">
+  <button mat-button color="warn" (click)="resetCounter()" disabled="{{shouldDisableButton}}">Reset?</button>
+</div>
 
-<!-- matBadge="happy" matBadgeOverlap="true" -->
+

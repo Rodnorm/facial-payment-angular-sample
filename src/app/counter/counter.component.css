@@ -22,3 +22,13 @@
   transform: scale(1.5);
   user-select: none;
 }
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+}
+
+.button button:disabled {
+  color: aliceblue;
+}

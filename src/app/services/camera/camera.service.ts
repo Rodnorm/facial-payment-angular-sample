@@ -13,6 +13,7 @@ export class CameraService {
   public sadFaceCounter: number = 0;
 
   getSadFaceCounter() {
+    debugger
     return this.sadFaceCounter;
   }
 
@@ -62,6 +63,7 @@ export class CameraService {
       height: (video.nativeElement as HTMLVideoElement).videoHeight,
     };
     faceApi.matchDimensions(canvas, displaySize);
+    console.log('funktioniert');
     setInterval(async () => {
       const detections = await faceApi
         .detectAllFaces(
@@ -84,13 +86,19 @@ export class CameraService {
       ) {
         const expressions = detections[0].expressions;
         if (expressions.happy > 0.99) {
-          this.setSmileFaceCounter(this.getSmileFaceCounter() + 1);
+          this.setSmileFaceCounter(this.getSmileFaceCounter() + 10);
         } else if (expressions.angry > 0.99) {
-          this.setAngryFaceCounter(this.getAngryFaceCounter() + 1);
+          this.setAngryFaceCounter(this.getAngryFaceCounter() + 10);
         } else if (expressions.sad > 0.99) {
-          this.setSadFaceCounter(this.getSadFaceCounter() + 1);
+          this.setSadFaceCounter(this.getSadFaceCounter() + 10);
         }
       }
     }, 100);
   };
+
+  public resetItems() {
+    this.setAngryFaceCounter(0);
+    this.setSadFaceCounter(0);
+    this.setSmileFaceCounter(0);
+  }
 }
